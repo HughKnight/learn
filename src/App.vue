@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <star-list></star-list>
+    <count-star></count-star>  
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import StarList from './components/StarList.vue'
+import CountStar from './components/CountStar.vue'
+import axios from 'axios'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    StarList,
+    CountStar
+  },
+  created(){
+  //  axios.get('/info').then(function(res){
+  //    console.log('res',res);
+  //  })
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scope>
+
 </style>
