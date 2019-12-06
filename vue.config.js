@@ -8,9 +8,9 @@ module.exports = {
           pathRewrite: {'^/api' : ''}
         },
       },
-      port:"8088",
-      hot: true
-     
+      port:"8988",
+      hot: true,
+      open: true
     },
     // autoOpenBrowser:true
 }

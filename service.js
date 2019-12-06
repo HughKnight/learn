@@ -1,6 +1,8 @@
 
+/* eslint-disable */ 
 var connect = require('connect');
 var bodyParser = require('body-parser');
+// let express = require("express");
 
 var app = connect()
     .use(bodyParser.json())
@@ -24,7 +26,8 @@ var app = connect()
               {
                 "name":"香蕉",
                 "price":"19.99",
-                "oldprice":"36.00"
+                "oldprice":"36.00",
+                "url":"https://img.meituan.net/avatar/28799a8c9e206fb7b54f321dd814712594813.jpg"
               },
               {
                 "name":"樱桃",

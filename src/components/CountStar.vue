@@ -20,7 +20,7 @@
             </li>
           </ul>
           <div v-show = "flg" :class="{showstyle:flg}"> 
-              <img src="" alt="">
+              <img :src="dataurl" alt="">
               <i>{{proname}}</i>
               <i>{{prooldprice}}</i>
               <i>{{proprice}}</i>
@@ -33,13 +33,15 @@
 </template>
 
 <script>
-import Aside from './AsideList'
+import Aside from './AsideList' 
+import Dialog from '../mixins/showMsg'
 
 export default {/* eslint-disable */ 
   name: 'CountStar',
   props: {
     msg: String
   },
+  mixins:[Dialog],
   components:{
     "menu-side":Aside
   },
@@ -55,7 +57,9 @@ export default {/* eslint-disable */
       flg:false,
       proname:"",
       proprice:"",
-      prooldprice:""
+      prooldprice:"",
+      dataurl:""
+     
     }
   },
   async created() {
@@ -88,6 +92,7 @@ export default {/* eslint-disable */
   //     .catch(err => {
   //       return 
   //     })
+  this.Dialog("woooooo");
   await this.getData('/info').then(res =>{
     console.log(res);
     this.result = res.result;
@@ -122,6 +127,7 @@ export default {/* eslint-disable */
         this.proprice = data.price;
         this.proname = data.name;
         this.prooldprice = data.oldprice;
+        this.dataurl = data.url;
       }
     }
     
